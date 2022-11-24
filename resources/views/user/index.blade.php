@@ -26,7 +26,7 @@
 			<div class="col-lg-12">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
-                        <span onclick="location.assign()" class="btn btn-success waves-effect waves-light "><i class="mdi mdi-plus-circle-outline"></i> Tambah</span>
+                        <span onclick="location.assign(`{{url('user/create')}}?id=0`)" class="btn btn-success waves-effect waves-light "><i class="mdi mdi-plus-circle-outline"></i> Tambah</span>
                         <span class="btn btn-success waves-effect waves-light "><i class="mdi mdi-plus-circle-outline"></i> Tambah</span>
                     </div>
                     <div class="col-sm-12 col-md-6">
@@ -68,13 +68,7 @@
 @endsection
 
 @push('ajax')
-        <script src="{{url_plug()}}/js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-        <!--datatable js-->
-        <script src="{{url_plug()}}/js/jquery.dataTables.min.js"></script>
-        <script src="{{url_plug()}}/js/dataTables.bootstrap5.min.js"></script>
-        <script src="{{url_plug()}}/js/dataTables.responsive.min.js"></script>
-        <script src="{{url_plug()}}/js/dataTables.buttons.min.js"></script>
+        
         
         <script type="text/javascript">
         /*
@@ -95,7 +89,7 @@
                         headerOffset: $('#header').height()
                     },
                     responsive: true,
-                    ajax:"{{ url('get_data')}}",
+                    ajax:"{{ url('user/get_data')}}",
 					columns: [
                         { data: 'id', render: function (data, type, row, meta) 
 							{
