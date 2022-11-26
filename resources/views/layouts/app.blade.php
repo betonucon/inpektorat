@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{url_plug()}}/css/dataTables.bootstrap5.min.css" />
     <!--datatable responsive css-->
     <link rel="stylesheet" href="{{url_plug()}}/css/responsive.bootstrap.min.css" />
-
+    <link href="{{url_plug()}}/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{url_plug()}}/css/buttons.dataTables.min.css">
     <!-- Layout config Js -->
     <script src="{{url_plug()}}/assets/js/layout.js"></script>
@@ -31,18 +31,47 @@
     <link href="{{url_plug()}}/assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="{{url_plug()}}/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{url_plug()}}/css/modal.css" rel="stylesheet" type="text/css" />
     <style>
         [data-layout=vertical][data-sidebar=dark] .navbar-nav .nav-link {
             color: #fff;
         }
-
+        .loadnya {
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: 1070;
+			top: 0;
+			left: 0;
+			background-color: rgb(0,0,0);
+			background-color: rgb(243 230 230 / 81%);
+			overflow-x: hidden;
+			transition: transform .9s;
+		}
+		.loadnya-content {
+			position: relative;
+			top: 25%;
+			width: 100%;
+			text-align: center;
+			margin-top: 30px;
+			color:#fff;
+			font-size:20px;
+		}
         
     </style>
 
 </head>
 
 <body>
-
+    <div id="loadnya" class="loadnya">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="loadnya-content">
+			<button class="btn btn-light" type="button" disabled>
+  				<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  				Loading...
+			</button>
+        </div>
+	</div>
     <!-- Begin page -->
     <div id="layout-wrapper">
 
@@ -827,18 +856,20 @@
     </div> -->
 
     <!-- Theme Settings -->
-    <div class="modal fade" id="modal-notifikasi" aria-hidden="true" tabindex="-1">
+    <div id="modal-notifikasi" class="modal fade" tabindex="-1"  aria-hidden="true" >
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-body text-center p-5">
-                    <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f7b84b,secondary:#405189" style="width:130px;height:130px">
+                <div class="modal-body text-center p-5" >
+                    <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f7b84b,secondary:#405189" style="width:130px;height:130px;">
                     </lord-icon>
-                    <div class="mt-4 pt-4">
-                        <h4>Uh oh, something went wrong!</h4>
-                        <p class="text-muted"> The transfer was not successfully received by us. the email of the recipient wasn't correct.</p>
+                    <div class="mt-4 pt-4" style="padding-top: 0rem !important;margin-top:0px !important">
+                        <h4>Warning !</h4>
+                        
+                            <div id="notifikasi" style="background:#ffe1d3;padding:1%;margin-bottom:3%">ssss</div>
+                       
                         <!-- Toogle to second dialog -->
-                        <button class="btn btn-warning" data-bs-target="#secondmodal" data-bs-toggle="modal" data-bs-dismiss="modal">
-                            Continue
+                        <button class="btn btn-danger" data-dismiss="modal">
+                            Close
                         </button>
                     </div>
                 </div>
@@ -867,18 +898,16 @@
     <script src="{{url_plug()}}/js/dataTables.responsive.min.js"></script>
     <script src="{{url_plug()}}/js/dataTables.buttons.min.js"></script>
     <script src="{{url_plug()}}/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="{{url_plug()}}/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <!-- init js -->
+    <script src="{{url_plug()}}/assets/libs/sweetalert2/sweetalert2.min.js"></script>
     <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
     <script src="{{url_plug()}}/assets/js/pages/form-pickers.init.js"></script>
-    @stack('ajax')
+    
     <!--app js-->
+    
     <script src="{{url_plug()}}/assets/js/app.js"></script>
-    <script>
-        
-        $('#modal-notifikasi').modal('show')
-    </script>
-
+    <script src="{{url_plug()}}/js/bootstrap.min.js"></script>
+    
+    @stack('ajax')
 </body>
 
 </html>

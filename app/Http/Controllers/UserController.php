@@ -62,6 +62,8 @@ class UserController extends Controller
         
         $rules['username']= 'required';
         $messages['username.required']= 'Lengkapi kolom username';
+        $rules['name']= 'required';
+        $messages['name.required']= 'Lengkapi kolom name';
        
         $validator = Validator::make($request->all(), $rules, $messages);
         $val=$validator->Errors();

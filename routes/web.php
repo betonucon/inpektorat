@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'user'],function(){
     Route::get('/', [UserController::class, 'index']);
-    Route::post('/', [UserController::class, 'simpan']);
+    Route::post('/', [UserController::class, 'store']);
     Route::get('/create', [UserController::class, 'create']);
     Route::get('/get_data', [UserController::class, 'get_data']);
 });
