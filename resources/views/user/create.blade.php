@@ -96,6 +96,8 @@
         
         
     <script type="text/javascript">
+
+		
         $('#btn-save').on('click', () => {
             Swal.fire({
 				title:"Yakin untuk proses data?",
