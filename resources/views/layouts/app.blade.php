@@ -31,7 +31,7 @@
     <link href="{{url_plug()}}/assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="{{url_plug()}}/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
-    <link href="{{url_plug()}}/css/modal.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="{{url_plug()}}/css/modal.css" rel="stylesheet" type="text/css" /> -->
     <style>
         [data-layout=vertical][data-sidebar=dark] .navbar-nav .nav-link {
             color: #fff;
@@ -891,8 +891,9 @@
     <script src="{{url_plug()}}/assets/libs/@simonwep/pickr/pickr.min.js"></script>
     <script src="{{url_plug()}}/assets/libs/prismjs/prism.js"></script>
     <script src="{{url_plug()}}/js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+    
     <!--datatable js-->
+    <script src="{{url_plug()}}/js/bootstrap.min.js"></script>
     <script src="{{url_plug()}}/js/jquery.dataTables.min.js"></script>
     <script src="{{url_plug()}}/js/dataTables.bootstrap5.min.js"></script>
     <script src="{{url_plug()}}/js/dataTables.responsive.min.js"></script>
@@ -901,13 +902,17 @@
     <script src="{{url_plug()}}/assets/libs/sweetalert2/sweetalert2.min.js"></script>
     <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
     <script src="{{url_plug()}}/assets/js/pages/form-pickers.init.js"></script>
+    @stack('ajax')
     
     <!--app js-->
     
     <script src="{{url_plug()}}/assets/js/app.js"></script>
-    <script src="{{url_plug()}}/js/bootstrap.min.js"></script>
     
-    @stack('ajax')
+    <script>
+        
+    </script>
+    @stack('datatable')
+    
 </body>
 
 </html>
